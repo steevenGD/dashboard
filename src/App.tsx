@@ -1,9 +1,12 @@
 //import { useState } from 'react'
 //import reactLogo from './assets/react.svg'
 //import viteLogo from '/vite.svg'
+ import TableWeather from './components/TableWeather';
+ import ControlWeather from './components/ControlWeather';
 import IndicatorWeather from './components/IndicatorWeather';
 import './App.css'
 import Grid from '@mui/material/Grid2' 
+import LineChartWeather from './components/LineChartWeather';
 
 function App() {
 //  const [count, setCount] = useState(0)
@@ -27,10 +30,21 @@ function App() {
 
         {/* Tabla */}
         <Grid size={{ xs: 12, xl: 8 }}>Elemento: Tabla</Grid>
-
+          {/* Grid Anidado */}
+          <Grid container spacing={2}>
+            <Grid size={{ xs: 12, xl: 3 }}>
+            <ControlWeather/>
+            </Grid>
+            <Grid size={{ xs: 12, xl: 9 }}>
+              <TableWeather/>
+                  </Grid>
+              </Grid>
+      
+      
         {/* Gráfico */}
-        <Grid size={{ xs: 12, xl: 4 }}>Elemento: Gráfico 1</Grid>
-       
+        <Grid size={{ xs: 12, xl: 4 }}>
+          <LineChartWeather/>
+        </Grid> 
     </Grid>
   )
 }
